@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const app = express();
 
 // para uso x-www-form-encoded paso de parametros por html
@@ -19,7 +19,12 @@ app.get('/', function(req, res) {
 
 // get, post, put, delete, HTTP
 app.get('/usuario/:id', (req, res) => {
-    res.json('Get user found');
+    const id = req.params.id;
+
+    res.json({
+        id,
+        message: 'get user found'
+    });
 });
 
 app.post('/usuario', (req, res) => {
@@ -49,10 +54,15 @@ app.put('/usuario/:id', (req, res) => {
 });
 
 app.delete('/usuario/delete:id', (req, res) => {
-    res.json('delete user found');
+    const id = req.params.id;
+
+    res.json({
+        id,
+        message: 'Delete user found'
+    });
 });
 
 
 app.listen(3000, () => {
     console.log('Server: http://localgost:', port);
-})
+});

@@ -7,7 +7,7 @@ const bp = require('body-parser');
 const port = require('./config/config').port;
 
 // parse application/x-www-form-urlencoded : Middleware
-app.use(bp.urlencoded({ extended: false }))
+app.use(bp.urlencoded({ extended: false }));
 
 // parse application/json : Middleware
 app.use(bp.json());
@@ -15,7 +15,7 @@ app.use(bp.json());
 
 app.get('/', function(req, res) {
     res.json('Server run');
-})
+});
 
 // get, post, put, delete, HTTP
 app.get('/usuario/:id', (req, res) => {

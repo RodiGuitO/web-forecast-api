@@ -4,7 +4,7 @@ const app = express();
 // para uso x-www-form-encoded paso de parametros por html
 const bp = require('body-parser');
 
-const port = require('./config/config');
+const port = require('./config/config').port;
 
 // parse application/x-www-form-urlencoded : Middleware
 app.use(bp.urlencoded({ extended: false }))

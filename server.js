@@ -4,7 +4,7 @@ const app = express();
 // para uso x-www-form-encoded paso de parametros por html
 const bp = require('body-parser');
 
-const port = require('./server/config/config').port;
+// const port = require('./server/config/config').port;
 
 // parse application/x-www-form-urlencoded : Middleware
 app.use(bp.urlencoded({ extended: false }));
@@ -63,6 +63,6 @@ app.delete('/usuario/:id', (req, res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log('Server: http://localgost:', port);
+app.listen(process.env.PORT || 3000, () => {
+    console.log('Server: http://localgost:', process.env.PORT || 3000);
 });

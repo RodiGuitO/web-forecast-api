@@ -13,9 +13,9 @@ app.use(bp.urlencoded({ extended: false }));
 app.use(bp.json());
 
 
-app.get('/', function(req, res) {
+/* app.get('/', function(req, res) {
     res.json('Server run');
-});
+}); */
 
 // get, post, put, delete, HTTP
 app.get('/usuario/:id', (req, res) => {
@@ -53,7 +53,7 @@ app.put('/usuario/:id', (req, res) => {
     });
 });
 
-app.delete('/usuario/delete:id', (req, res) => {
+app.delete('/usuario/:id', (req, res) => {
     const id = req.params.id;
 
     res.json({
